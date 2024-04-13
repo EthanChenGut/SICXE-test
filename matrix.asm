@@ -480,3 +480,4 @@ newline	BYTE	10
 space	BYTE	32
 stdin	BYTE	0
 stdout	BYTE	1
+.test
