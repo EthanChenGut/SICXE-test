@@ -67,7 +67,7 @@ main
 	LDT	#25	.the length of the string
 	JSUB	print2	.print enter the second number
 	JSUB	nl
-	
+
 	LDX	#0
 	LDT	#10
 	JSUB	clns	.clear the data in ns
@@ -482,4 +482,3 @@ newline	BYTE	10
 space	BYTE	32
 stdin	BYTE	0
 stdout	BYTE	1
-.test
