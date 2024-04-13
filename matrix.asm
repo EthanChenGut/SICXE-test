@@ -18,12 +18,20 @@ main
 	STT	n1
 
 	LDX	#0
+	LDT	#10
+	JSUB	clns	.clear the data in ns
+
+	LDX	#0
 	JSUB	inputns
 	LDT	#0
 	LDX	#0
 	LDA	#48
 	JSUB	stn
 	STT 	n2
+
+	LDX	#0
+	LDT	#10
+	JSUB	clns	.clear the data in ns
 
 	LDX	#0
 	JSUB	inputns
@@ -34,12 +42,20 @@ main
 	STT	n3
 
 	LDX	#0
+	LDT	#10
+	JSUB	clns	.clear the data in ns
+
+	LDX	#0
 	JSUB	inputns
 	LDT	#0
 	LDX	#0
 	LDA	#48
 	JSUB	stn
 	STT 	n4
+
+	LDX	#0
+	LDT	#10
+	JSUB	clns	.clear the data in ns
 
 	LDA	n1
 	LDT	#0
@@ -63,6 +79,10 @@ main
 	STT	n5
 
 	LDX	#0
+	LDT	#10
+	JSUB	clns	.clear the data in ns
+
+	LDX	#0
 	JSUB	inputns
 	LDT	#0
 	LDX	#0
@@ -71,12 +91,20 @@ main
 	STT	n6
 
 	LDX	#0
+	LDT	#10
+	JSUB	clns	.clear the data in ns
+
+	LDX	#0
 	JSUB	inputns
 	LDT	#0
 	LDX	#0
 	LDA	#48
 	JSUB	stn
 	STT 	n7
+
+	LDX	#0
+	LDT	#10
+	JSUB	clns	.clear the data in ns
 
 	LDX	#0
 	JSUB	inputns
@@ -141,8 +169,15 @@ f1
 	LDX	#0
 	LDT	#7	.the length of the string
 	JSUB	print3
+........................
+	LDX	#0
+	LDT	#10
+	JSUB	clns
+........................
+
 
 	LDX	#0
+	LDA	tmp
 	JSUB	nts
 f2
 	JSUB	printns
