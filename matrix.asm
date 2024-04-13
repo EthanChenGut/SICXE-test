@@ -99,32 +99,32 @@ main
 c1
 	LDA	n1
 	LDT	n2
-	COMP	A,T
+	COMPR	A,T
 	JEQ	c2
 c2
 	LDA	n2
 	LDT	n3
-	COMP	A,T
+	COMPR	A,T
 	JEQ	c3
 c3
 	LDA	n3
 	LDT	n4
-	COMP	A,T
+	COMPR	A,T
 	JEQ	exit
 c4
 	LDA	n5
 	LDT	n6
-	COMP	A,T
+	COMPR	A,T
 	JEQ	c5
 c5
 	LDA	n6
 	LDT	n7
-	COMP	A,T
+	COMPR	A,T
 	JEQ	c6
 c6
 	LDA	n7
 	LDT	n8
-	COMP	A,T
+	COMPR	A,T
 	JEQ	exit
 exit
 	LDX	#0
