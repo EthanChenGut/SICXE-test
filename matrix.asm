@@ -2,8 +2,9 @@ test	START	0
 
 main
 	LDX	#0
-	LDT	#41	.the length of the string
+	LDT	#46	.the length of the string
 	JSUB	print1	.print enter the first matrix
+	JSUB	nl
 
 	LDX	#0
 	LDT	#10
@@ -65,7 +66,8 @@ main
 	LDX	#0
 	LDT	#25	.the length of the string
 	JSUB	print2	.print enter the second number
-
+	JSUB	nl
+	
 	LDX	#0
 	LDT	#10
 	JSUB	clns	.clear the data in ns
@@ -167,8 +169,9 @@ f1
 	JSUB	nl
 
 	LDX	#0
-	LDT	#7	.the length of the string
+	LDT	#21	.the length of the string
 	JSUB	print3
+	JSUB	nl
 ........................
 	LDX	#0
 	LDT	#10
@@ -452,9 +455,9 @@ printns4			.print ns
 
 halt	J	halt
 
-str1	BYTE	C'input the first matrix(input 0 to exit): '
+str1	BYTE	C'input the first matrix(input 0 0 0 0 to exit): '
 str2	BYTE	C'input the second matrix: '
-str3	BYTE	C'The new matrix is '
+str3	BYTE	C'The final matrix is :'
 str4	BYTE	C'exit successfully'
 
 ns	RESB	10	.store the first number as string
