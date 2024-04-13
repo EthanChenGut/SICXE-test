@@ -221,7 +221,7 @@ f9
 	JSUB	nl
 	JSUB	nl
 
-	J	main
+	J	halt
 
 
 nl			.print new line
