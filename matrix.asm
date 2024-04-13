@@ -220,8 +220,7 @@ f8
 f9
 	JSUB	nl
 	JSUB	nl
-
-	J	halt
+	J	main
 
 
 nl			.print new line
@@ -386,7 +385,7 @@ nts3			.convert number to string
 	LDA	tmp
 	DIV	#10
 	COMP	#0
-	JGT	nts2
+	JGT	nts3
 	J	f6
 nts4			.convert number to string
 	STA	tmp
@@ -398,7 +397,7 @@ nts4			.convert number to string
 	LDA	tmp
 	DIV	#10
 	COMP	#0
-	JGT	nts2
+	JGT	nts4
 	J	f8
 
 printns			.print ns
@@ -416,7 +415,7 @@ printns			.print ns
 
 printns2			.print ns
 	TD	stdout
-	JEQ	printns
+	JEQ	printns2
 	LDCH	ns, X
 	WD	stdout
 	LDT	#1
@@ -428,28 +427,28 @@ printns2			.print ns
 	J	f5
 printns3			.print ns
 	TD	stdout
-	JEQ	printns
+	JEQ	printns3
 	LDCH	ns, X
 	WD	stdout
 	LDT	#1
 	SUBR	T, X
 	LDT	#0
 	COMPR	T, X
-	JLT	printns2
-	JEQ	printns2
+	JLT	printns3
+	JEQ	printns3
 	J	f7
 printns4			.print ns
 	TD	stdout
-	JEQ	printns
+	JEQ	printns4
 	LDCH	ns, X
 	WD	stdout
 	LDT	#1
 	SUBR	T, X
 	LDT	#0
 	COMPR	T, X
-	JLT	printns2
-	JEQ	printns2
-	J	f9
+	JLT	printns4
+	JEQ	printns4
+	J	halt
 
 halt	J	halt
 
