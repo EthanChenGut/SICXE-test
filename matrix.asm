@@ -448,7 +448,7 @@ printns4			.print ns
 	COMPR	T, X
 	JLT	printns4
 	JEQ	printns4
-	J	halt
+	J	f9
 
 halt	J	halt
 
