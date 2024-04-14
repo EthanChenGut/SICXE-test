@@ -225,54 +225,54 @@ f9
 
 
 nl			.print new line
-	TD	stdout
+	TD	strout
 	JEQ	nl
 	LDCH	newline
-	WD	stdout
+	WD	strout
 	RSUB
 
 print
-	TD	stdout
+	TD	strout
 	JEQ	print
 	LDCH	str1, X
-	WD	stdout
+	WD	strout
 	TIXR	T
 	JLT	print
 
 	RSUB
 
 print2
-	TD	stdout
+	TD	strout
 	JEQ	print2
 	LDCH	str2, X
-	WD	stdout
+	WD	strout
 	TIXR	T
 	JLT	print2
 
 	RSUB
 
 print3			.print new matrix
-	TD	stdout
+	TD	strout
 	JEQ	print3
 	LDCH	str3, X
-	WD	stdout
+	WD	strout
 	TIXR	T
 	JLT	print3
 	RSUB
 
 print4			.exit
-	TD	stdout
+	TD	strout
 	JEQ	print4
 	LDCH	str4, X
-	WD	stdout
+	WD	strout
 	TIXR	T
 	JLT	print4
 	RSUB
 
 inputns			.read the number and store in ns
-	TD	stdin
+	TD	strin
 	JEQ	inputns
-	RD	stdin
+	RD	strin
 	STCH	ns, X
 	LDT	#1
 	ADDR	T, X
@@ -402,10 +402,10 @@ nts4			.convert number to string
 	J	f8
 
 printns			.print ns
-	TD	stdout
+	TD	strout
 	JEQ	printns
 	LDCH	ns, X
-	WD	stdout
+	WD	strout
 	LDT	#1
 	SUBR	T, X
 	LDT	#0
@@ -415,10 +415,10 @@ printns			.print ns
 	J	f3
 
 printns2			.print ns
-	TD	stdout
+	TD	strout
 	JEQ	printns2
 	LDCH	ns, X
-	WD	stdout
+	WD	strout
 	LDT	#1
 	SUBR	T, X
 	LDT	#0
@@ -427,10 +427,10 @@ printns2			.print ns
 	JEQ	printns2
 	J	f5
 printns3			.print ns
-	TD	stdout
+	TD	strout
 	JEQ	printns3
 	LDCH	ns, X
-	WD	stdout
+	WD	strout
 	LDT	#1
 	SUBR	T, X
 	LDT	#0
@@ -439,10 +439,10 @@ printns3			.print ns
 	JEQ	printns3
 	J	f7
 printns4			.print ns
-	TD	stdout
+	TD	strout
 	JEQ	printns4
 	LDCH	ns, X
-	WD	stdout
+	WD	strout
 	LDT	#1
 	SUBR	T, X
 	LDT	#0
@@ -478,5 +478,5 @@ a4	WORD    0
 
 newline	BYTE	10
 space	BYTE	32
-stdin	BYTE	0
-stdout	BYTE	1
+strin	BYTE	0
+strout	BYTE	1
