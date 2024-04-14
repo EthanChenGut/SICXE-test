@@ -288,7 +288,7 @@ clrns			.clear the data in ns
 	JLT	clrns
 	RSUB
 
-stn			.convert ns to int and store in n1
+stn			.convert ns to int and store in n
 	SUB	#48
 	LDS	#10
 	MULR	S, T
