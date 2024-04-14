@@ -2,7 +2,7 @@ test	START	0
 
 main
 	LDX	#0
-	LDT	#46	.the length of the string
+	LDT	#50	.the length of the string
 	JSUB	print1	.print enter the first matrix
 	JSUB	nl
 
@@ -64,7 +64,7 @@ main
 	JEQ	c1
 
 	LDX	#0
-	LDT	#25	.the length of the string
+	LDT	#51	.the length of the string
 	JSUB	print2	.print enter the second matrix
 	JSUB	nl
 
@@ -158,7 +158,7 @@ c6
 	JEQ	exit
 exit
 	LDX	#0
-	LDT	#17
+	LDT	#28
 	JSUB	print4
 	J	halt
 
@@ -260,7 +260,7 @@ print3			.print new matrix
 	JLT	print3
 	RSUB
 
-print4
+print4			.exit
 	TD	stdout
 	JEQ	print4
 	LDCH	str4, X
@@ -453,10 +453,10 @@ printns4			.print ns
 
 halt	J	halt
 
-str1	BYTE	C'input the first matrix(input 0 0 0 0 to exit): '
-str2	BYTE	C'input the second matrix: '
+str1	BYTE	C'input the first matrix(input Zero Matrix to exit):'
+str2	BYTE	C'input the second matrix(input Zero Matrix to exit):'
 str3	BYTE	C'The final matrix is :'
-str4	BYTE	C'exit successfully'
+str4	BYTE	C'Leaving requirement approved'
 
 ns	RESB	10	.store the first number as string
 
