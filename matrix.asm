@@ -11,7 +11,7 @@ main
 	JSUB	clns	.clear the data in ns
 
 	LDX	#0
-	JSUB	inputns	.read the first number as string and store in ns
+	JSUB	inputns	.read the number as string and store in ns
 	LDT	#0
 	LDX	#0
 	LDA	#48
@@ -20,7 +20,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns	.clear the data in ns
+	JSUB	clns
 
 	LDX	#0
 	JSUB	inputns
@@ -32,7 +32,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns	.clear the data in ns
+	JSUB	clns
 
 	LDX	#0
 	JSUB	inputns
@@ -44,7 +44,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns	.clear the data in ns
+	JSUB	clns
 
 	LDX	#0
 	JSUB	inputns
@@ -56,7 +56,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns	.clear the data in ns
+	JSUB	clns
 
 	LDA	n1
 	LDT	#0
@@ -65,7 +65,7 @@ main
 
 	LDX	#0
 	LDT	#25	.the length of the string
-	JSUB	print2	.print enter the second number
+	JSUB	print2	.print enter the second matrix
 	JSUB	nl
 
 	LDX	#0
@@ -73,7 +73,7 @@ main
 	JSUB	clns	.clear the data in ns
 
 	LDX	#0
-	JSUB	inputns	.read the second number and store in ns
+	JSUB	inputns	.read the number and store in ns
 	LDT	#0
 	LDX	#0
 	LDA	#48
@@ -82,7 +82,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns	.clear the data in ns
+	JSUB	clns
 
 	LDX	#0
 	JSUB	inputns
@@ -94,7 +94,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns	.clear the data in ns
+	JSUB	clns
 
 	LDX	#0
 	JSUB	inputns
@@ -106,7 +106,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns	.clear the data in ns
+	JSUB	clns
 
 	LDX	#0
 	JSUB	inputns
@@ -172,13 +172,11 @@ f1
 	LDT	#21	.the length of the string
 	JSUB	print3
 	JSUB	nl
-........................
+
 	LDX	#0
 	LDT	#10
 	JSUB	clns
-........................
-
-
+	
 	LDX	#0
 	LDA	tmp
 	JSUB	nts
@@ -271,7 +269,7 @@ print4
 	JLT	print4
 	RSUB
 
-inputns			.read the first number and store in ns
+inputns			.read the number and store in ns
 	TD	stdin
 	JEQ	inputns
 	RD	stdin
