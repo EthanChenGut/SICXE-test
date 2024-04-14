@@ -3,12 +3,12 @@ test	START	0
 main
 	LDX	#0
 	LDT	#50	.the length of the string
-	JSUB	print1	.print enter the first matrix
+	JSUB	print	.print enter the first matrix
 	JSUB	nl
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns	.clear the data in ns
+	JSUB	clrns	.clear the data in ns
 
 	LDX	#0
 	JSUB	inputns	.read the number as string and store in ns
@@ -20,7 +20,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns
+	JSUB	clrns
 
 	LDX	#0
 	JSUB	inputns
@@ -32,7 +32,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns
+	JSUB	clrns
 
 	LDX	#0
 	JSUB	inputns
@@ -44,7 +44,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns
+	JSUB	clrns
 
 	LDX	#0
 	JSUB	inputns
@@ -56,7 +56,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns
+	JSUB	clrns
 
 	LDA	n1
 	LDT	#0
@@ -70,7 +70,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns	.clear the data in ns
+	JSUB	clrns	.clear the data in ns
 
 	LDX	#0
 	JSUB	inputns	.read the number and store in ns
@@ -82,7 +82,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns
+	JSUB	clrns
 
 	LDX	#0
 	JSUB	inputns
@@ -94,7 +94,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns
+	JSUB	clrns
 
 	LDX	#0
 	JSUB	inputns
@@ -106,7 +106,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns
+	JSUB	clrns
 
 	LDX	#0
 	JSUB	inputns
@@ -123,7 +123,7 @@ main
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns
+	JSUB	clrns
 
 	JSUB	matrixMUL
 c1
@@ -175,7 +175,7 @@ f1
 
 	LDX	#0
 	LDT	#10
-	JSUB	clns
+	JSUB	clrns
 	
 	LDX	#0
 	LDA	tmp
@@ -231,13 +231,13 @@ nl			.print new line
 	WD	stdout
 	RSUB
 
-print1
+print
 	TD	stdout
-	JEQ	print1
+	JEQ	print
 	LDCH	str1, X
 	WD	stdout
 	TIXR	T
-	JLT	print1
+	JLT	print
 
 	RSUB
 
@@ -281,11 +281,11 @@ inputns			.read the number and store in ns
 	JLT	inputns
 	RSUB
 
-clns			.clear the data in ns
+clrns			.clear the data in ns
 	LDCH	space
 	STCH	ns, X
 	TIXR	T
-	JLT	clns
+	JLT	clrns
 	RSUB
 
 stn			.convert ns to int and store in n1
